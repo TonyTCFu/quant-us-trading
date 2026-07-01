@@ -1,0 +1,67 @@
+name: Daily Stock Update
+on:
+  schedule:
+    - cron: '30 21 * * 1-5'     # UTC 21:30 = 北京时间次日 5:30 AM 周二~周六
+  workflow_dispatch:              # 手动触发
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write              # 允许 push
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install pandas numpy matplotlib alpaca-py python-dotenv
+
+      - name: Create .env from secrets
+        run: |
+          cat > .env << 'EOF'
+          ALPACA_API_KEY=${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY=${{ secrets.ALPACA_SECRET_KEY }}
+          EOF
+
+      - name: Restore data cache
+        run: |
+          mkdir -p data outputs outputs/dashboard
+          # 从上次 commit 恢复 CSV 缓存
+          git checkout HEAD -- data/ 2>/dev/null || true
+          git checkout HEAD -- outputs/ 2>/dev/null || true
+
+      - name: Run daily update
+        run: python3 paper_trading_live.py update
+
+      - name: Build dashboard
+        run: python3 build_dashboard_live.py
+
+      - name: Push to GitHub Pages
+        run: |
+          cp outputs/dashboard/live.html /tmp/dash.html
+          git clone --depth 1 https://${{ secrets.GH_PAT }}@github.com/TonyTCFu/cc-us-stock-dashboard.git /tmp/dash-repo
+          cp /tmp/dash.html /tmp/dash-repo/dash.html
+          cd /tmp/dash-repo
+          git config user.name "Quant Bot"
+          git config user.email "bot@quant.local"
+          git add dash.html
+          git commit -m "Auto $(date +%Y-%m-%d)" || exit 0
+          git push
+
+      - name: Commit data back
+        run: |
+          git config user.name "Quant Bot"
+          git config user.email "bot@quant.local"
+          git add data/ outputs/paper_*.json outputs/paper_*.csv
+          git commit -m "Data $(date +%Y-%m-%d)" || exit 0
+          git push https://${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git main

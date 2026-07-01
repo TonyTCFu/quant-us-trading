@@ -1,0 +1,49 @@
+# 敏感配置
+.env
+.env.local
+*.key
+*.pem
+credentials.*
+secrets.*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# 虚拟环境
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 数据产物（根据实际需求调整）
+data/*.csv
+data/*.parquet
+data/*.json
+!data/.gitkeep
+
+# 输出产物
+outputs/*.png
+outputs/*.csv
+outputs/*.html
+
+# macOS
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+outputs/paper_state.json
+outputs/paper_trades.csv
+outputs/paper_equity.csv
+outputs/daily_signals_*.md
+outputs/daily_summary_*.md
+outputs/weekly_review_*.md

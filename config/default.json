@@ -1,0 +1,32 @@
+{
+  "_comment": "默认配置 — 所有参数均可按环境覆盖。时区假设：美股交易时段 Eastern Time (ET)",
+  "data": {
+    "tickers": ["AAPL", "MSFT", "GOOGL", "AMZN", "META"],
+    "frequency": "1d",
+    "lookback_days": 365,
+    "cache_dir": "data",
+    "request_interval": 2.0,
+    "max_retries": 3,
+    "timeout": 30
+  },
+  "backtest": {
+    "initial_capital": 100000.0,
+    "commission_per_share": 0.005,
+    "slippage": 0.0005,
+    "signal_delay": "next_open"
+  },
+  "risk": {
+    "max_position_pct": 0.20,
+    "max_positions": 10,
+    "max_total_exposure": 0.95,
+    "stop_loss_pct": -0.05,
+    "take_profit_pct": 0.10,
+    "max_daily_loss_pct": -0.03,
+    "max_drawdown_pct": -0.20,
+    "min_avg_volume": 500000
+  },
+  "strategy": {
+    "name": "ma_cross",
+    "params": {}
+  }
+}

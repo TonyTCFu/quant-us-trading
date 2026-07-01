@@ -1,0 +1,113 @@
+{
+  "initial_capital": 20000.0,
+  "cash": 1728.513940000002,
+  "positions": {
+    "JNJ": {
+      "shares": 16,
+      "avg_cost": 238.43,
+      "entry_date": "2026-06-12",
+      "entry_price": 238.31
+    },
+    "GE": {
+      "shares": 12,
+      "avg_cost": 332.72,
+      "entry_date": "2026-06-12",
+      "entry_price": 332.55
+    },
+    "JPM": {
+      "shares": 12,
+      "avg_cost": 313.7,
+      "entry_date": "2026-06-12",
+      "entry_price": 313.54
+    },
+    "GS": {
+      "shares": 3,
+      "avg_cost": 1036.0,
+      "entry_date": "2026-06-12",
+      "entry_price": 1035.48
+    },
+    "CAT": {
+      "shares": 4,
+      "avg_cost": 897.86,
+      "entry_date": "2026-06-12",
+      "entry_price": 897.41
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-06-12",
+      "ticker": "JNJ",
+      "side": "BUY",
+      "shares": 16,
+      "price": 238.31,
+      "cost": 3814.95,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "GE",
+      "side": "BUY",
+      "shares": 12,
+      "price": 332.55,
+      "cost": 3992.66,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "JPM",
+      "side": "BUY",
+      "shares": 12,
+      "price": 313.54,
+      "cost": 3764.42,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "GS",
+      "side": "BUY",
+      "shares": 3,
+      "price": 1035.48,
+      "cost": 3108.01,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "CAT",
+      "side": "BUY",
+      "shares": 4,
+      "price": 897.41,
+      "cost": 3591.45,
+      "reason": "INIT"
+    }
+  ],
+  "equity_history": [
+    {
+      "date": "2026-06-12",
+      "equity": 19990.63,
+      "cash": 1728.51,
+      "position_value": 18262.12,
+      "total_return": 0,
+      "positions": 5
+    },
+    {
+      "date": "2026-06-13",
+      "equity": 20285.12,
+      "cash": 1728.51,
+      "position_value": 18556.61,
+      "total_return": 0.0143,
+      "positions": 5
+    },
+    {
+      "date": "2026-06-14",
+      "equity": 20285.12,
+      "cash": 1728.51,
+      "position_value": 18556.61,
+      "total_return": 0.0143,
+      "positions": 5
+    }
+  ],
+  "start_date": "2026-06-12",
+  "last_update": "2026-06-14",
+  "total_trades": 5,
+  "total_commission": 0.23500000000000001
+}

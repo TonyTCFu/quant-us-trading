@@ -1,0 +1,15 @@
+# 核心数据处理
+pandas>=1.3.0
+numpy>=1.21.0
+
+# 行情数据
+yfinance>=0.2.0
+
+# 可视化
+matplotlib>=3.4.0
+
+# 注：pyyaml、python-dotenv 因本地代理限制暂未安装，
+# 配置改用 JSON（stdlib），.env 加载内联实现，零额外依赖。
+# 代理解决后可恢复：
+# pyyaml>=5.4.0
+# python-dotenv>=0.19.0
