@@ -47,3 +47,4 @@ outputs/paper_equity.csv
 outputs/daily_signals_*.md
 outputs/daily_summary_*.md
 outputs/weekly_review_*.md
+.claude/settings.local.json
