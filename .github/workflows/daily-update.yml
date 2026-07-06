@@ -58,6 +58,14 @@ jobs:
           git commit -m "Auto $(date +%Y-%m-%d)" || exit 0
           git push
 
+      - name: Purge CDN cache
+        run: |
+          curl -s -X POST \
+            "https://api.github.com/repos/TonyTCFu/cc-us-stock-dashboard/pages/builds" \
+            -H "Authorization: Bearer ${{ secrets.GH_PAT }}" \
+            -H "Accept: application/vnd.github+json" \
+            -o /dev/null -w "Pages build: %{http_code}\n"
+
       - name: Commit data back
         run: |
           git config user.name "Quant Bot"
