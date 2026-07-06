@@ -41,9 +41,6 @@ outputs/*.html
 
 # Jupyter
 .ipynb_checkpoints/
-outputs/paper_state.json
-outputs/paper_trades.csv
-outputs/paper_equity.csv
 outputs/daily_signals_*.md
 outputs/daily_summary_*.md
 outputs/weekly_review_*.md

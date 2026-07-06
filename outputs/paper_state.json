@@ -1,0 +1,220 @@
+{
+  "initial_capital": 20000.0,
+  "cash": 2133.0351750000027,
+  "positions": {
+    "JNJ": {
+      "shares": 20,
+      "avg_cost": 263.1765,
+      "entry_date": "2026-07-06",
+      "entry_price": 263.1765
+    },
+    "GE": {
+      "shares": 14,
+      "avg_cost": 374.3921,
+      "entry_date": "2026-07-01",
+      "entry_price": 374.3921
+    },
+    "JPM": {
+      "shares": 12,
+      "avg_cost": 313.7018,
+      "entry_date": "2026-06-12",
+      "entry_price": 313.7018
+    },
+    "GS": {
+      "shares": 0,
+      "avg_cost": 1036.0027,
+      "entry_date": "2026-06-12",
+      "entry_price": 1036.0027
+    },
+    "CAT": {
+      "shares": 5,
+      "avg_cost": 1009.4895,
+      "entry_date": "2026-07-01",
+      "entry_price": 1009.4895
+    }
+  },
+  "trade_log": [
+    {
+      "date": "2026-06-12",
+      "ticker": "JNJ",
+      "side": "BUY",
+      "shares": 16,
+      "price": 238.31,
+      "cost": 3814.95,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "GE",
+      "side": "BUY",
+      "shares": 12,
+      "price": 332.55,
+      "cost": 3992.66,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "JPM",
+      "side": "BUY",
+      "shares": 12,
+      "price": 313.54,
+      "cost": 3764.42,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "GS",
+      "side": "BUY",
+      "shares": 3,
+      "price": 1035.48,
+      "cost": 3108.01,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-12",
+      "ticker": "CAT",
+      "side": "BUY",
+      "shares": 4,
+      "price": 897.41,
+      "cost": 3591.45,
+      "reason": "INIT"
+    },
+    {
+      "date": "2026-06-26",
+      "ticker": "GE",
+      "side": "SELL",
+      "shares": 12,
+      "price": 374.75,
+      "proceeds": 4494.69,
+      "pnl": 502.04,
+      "pnl_pct": 0.1257,
+      "holding_days": 14,
+      "reason": "TAKE_PROFIT (12.6%)"
+    },
+    {
+      "date": "2026-06-26",
+      "ticker": "CAT",
+      "side": "SELL",
+      "shares": 4,
+      "price": 1053.38,
+      "proceeds": 4211.39,
+      "pnl": 619.94,
+      "pnl_pct": 0.1726,
+      "holding_days": 14,
+      "reason": "TAKE_PROFIT (17.3%)"
+    },
+    {
+      "date": "2026-07-01",
+      "ticker": "GS",
+      "side": "SELL",
+      "shares": 3,
+      "price": 1015.33,
+      "proceeds": 3044.45,
+      "pnl": -63.56,
+      "pnl_pct": -0.0204,
+      "holding_days": 19,
+      "reason": "SIGNAL_SELL"
+    },
+    {
+      "date": "2026-07-01",
+      "ticker": "GE",
+      "side": "BUY",
+      "shares": 14,
+      "price": 374.2,
+      "cost": 5241.49,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-01",
+      "ticker": "CAT",
+      "side": "BUY",
+      "shares": 5,
+      "price": 1008.98,
+      "cost": 5047.45,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-06",
+      "ticker": "JNJ",
+      "side": "SELL",
+      "shares": 16,
+      "price": 263.04,
+      "proceeds": 4206.46,
+      "pnl": 391.51,
+      "pnl_pct": 0.1026,
+      "holding_days": 24,
+      "reason": "TAKE_PROFIT (10.3%)"
+    },
+    {
+      "date": "2026-07-06",
+      "ticker": "JNJ",
+      "side": "BUY",
+      "shares": 20,
+      "price": 263.04,
+      "cost": 5263.53,
+      "reason": "SIGNAL"
+    }
+  ],
+  "equity_history": [
+    {
+      "date": "2026-06-12",
+      "equity": 19990.63,
+      "cash": 1728.51,
+      "position_value": 18262.12,
+      "total_return": 0,
+      "positions": 5
+    },
+    {
+      "date": "2026-06-13",
+      "equity": 20285.12,
+      "cash": 1728.51,
+      "position_value": 18556.61,
+      "total_return": 0.0143,
+      "positions": 5
+    },
+    {
+      "date": "2026-06-14",
+      "equity": 20285.12,
+      "cash": 1728.51,
+      "position_value": 18556.61,
+      "total_return": 0.0143,
+      "positions": 5
+    },
+    {
+      "date": "2026-06-26",
+      "equity": 21690.85,
+      "cash": 10434.59,
+      "position_value": 11256.26,
+      "total_return": 0.0845,
+      "positions": 3
+    },
+    {
+      "date": "2026-07-01",
+      "equity": 21509.33,
+      "cash": 3190.11,
+      "position_value": 18319.22,
+      "total_return": 0.0755,
+      "positions": 4
+    },
+    {
+      "date": "2026-07-02",
+      "equity": 21471.67,
+      "cash": 3190.11,
+      "position_value": 18281.56,
+      "total_return": 0.0736,
+      "positions": 4
+    },
+    {
+      "date": "2026-07-06",
+      "equity": 21483.24,
+      "cash": 2133.04,
+      "position_value": 19350.2,
+      "total_return": 0.0742,
+      "positions": 4
+    }
+  ],
+  "start_date": "2026-06-12",
+  "last_update": "2026-07-06",
+  "total_trades": 12,
+  "total_commission": 0.605
+}

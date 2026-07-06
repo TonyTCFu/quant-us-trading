@@ -536,6 +536,10 @@ if __name__ == "__main__":
     out = build_dashboard()
     print(f"Live dashboard: {out}")
 
+    if out is None:
+        print("Dashboard build returned None — skip deploy")
+        sys.exit(0)
+
     # Auto-deploy: copy to deploy/ and create thin redirect
     deploy_dir = Path("deploy")
     deploy_dir.mkdir(exist_ok=True)
