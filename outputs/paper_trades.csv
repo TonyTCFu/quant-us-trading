@@ -16,3 +16,4 @@ date,ticker,side,shares,price,cost,reason,proceeds,pnl,pnl_pct,holding_days
 2026-07-07,META,BUY,2,615.41,1231.45,SIGNAL,,,,
 2026-07-07,AMZN,BUY,1,245.7,245.83,SIGNAL,,,,
 2026-07-09,NFLX,BUY,2,75.46,151.01,SIGNAL,,,,
+2026-07-10,NFLX,SELL,2,73.38,,SIGNAL_SELL,146.68,-4.33,-0.0287,1.0

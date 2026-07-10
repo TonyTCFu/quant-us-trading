@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 62.28232500000425,
+  "cash": 208.95894500000426,
   "positions": {
     "JNJ": {
       "shares": 20,
@@ -51,7 +51,7 @@
       "entry_price": 245.8278
     },
     "NFLX": {
-      "shares": 2,
+      "shares": 0,
       "avg_cost": 75.5027,
       "entry_date": "2026-07-09",
       "entry_price": 75.5027
@@ -225,6 +225,18 @@
       "price": 75.46,
       "cost": 151.01,
       "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-10",
+      "ticker": "NFLX",
+      "side": "SELL",
+      "shares": 2,
+      "price": 73.38,
+      "proceeds": 146.68,
+      "pnl": -4.33,
+      "pnl_pct": -0.0287,
+      "holding_days": 1,
+      "reason": "SIGNAL_SELL"
     }
   ],
   "equity_history": [
@@ -307,10 +319,18 @@
       "position_value": 20917.34,
       "total_return": 0.049,
       "positions": 7
+    },
+    {
+      "date": "2026-07-10",
+      "equity": 20998.27,
+      "cash": 208.96,
+      "position_value": 20789.31,
+      "total_return": 0.0499,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-09",
-  "total_trades": 17,
-  "total_commission": 0.725
+  "last_update": "2026-07-10",
+  "total_trades": 18,
+  "total_commission": 0.735
 }
