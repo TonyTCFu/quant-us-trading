@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 18.97122000000286,
+  "cash": 56.04373500000406,
   "positions": {
     "JNJ": {
       "shares": 20,
@@ -9,7 +9,7 @@
       "entry_price": 263.1765
     },
     "GE": {
-      "shares": 14,
+      "shares": 0,
       "avg_cost": 374.3921,
       "entry_date": "2026-07-01",
       "entry_price": 374.3921
@@ -51,10 +51,22 @@
       "entry_price": 631.8007
     },
     "NFLX": {
-      "shares": 4,
+      "shares": 0,
       "avg_cost": 75.5027,
       "entry_date": "2026-07-10",
       "entry_price": 75.5027
+    },
+    "NVDA": {
+      "shares": 24,
+      "avg_cost": 203.5967,
+      "entry_date": "2026-07-13",
+      "entry_price": 203.5967
+    },
+    "AAPL": {
+      "shares": 1,
+      "avg_cost": 317.6337,
+      "entry_date": "2026-07-13",
+      "entry_price": 317.6337
     }
   },
   "trade_log": [
@@ -225,6 +237,48 @@
       "price": 75.46,
       "cost": 302.01,
       "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-13",
+      "ticker": "GE",
+      "side": "SELL",
+      "shares": 14,
+      "price": 353.45,
+      "proceeds": 4945.76,
+      "pnl": -295.73,
+      "pnl_pct": -0.0564,
+      "holding_days": 12,
+      "reason": "STOP_LOSS (-5.6%)"
+    },
+    {
+      "date": "2026-07-13",
+      "ticker": "NVDA",
+      "side": "BUY",
+      "shares": 24,
+      "price": 203.49,
+      "cost": 4886.32,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-13",
+      "ticker": "NFLX",
+      "side": "SELL",
+      "shares": 4,
+      "price": 73.86,
+      "proceeds": 295.27,
+      "pnl": -6.74,
+      "pnl_pct": -0.0223,
+      "holding_days": 3,
+      "reason": "SIGNAL_SELL"
+    },
+    {
+      "date": "2026-07-13",
+      "ticker": "AAPL",
+      "side": "BUY",
+      "shares": 1,
+      "price": 317.47,
+      "cost": 317.63,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -315,10 +369,18 @@
       "position_value": 20995.74,
       "total_return": 0.0507,
       "positions": 7
+    },
+    {
+      "date": "2026-07-13",
+      "equity": 21037.78,
+      "cash": 56.04,
+      "position_value": 20981.74,
+      "total_return": 0.0519,
+      "positions": 7
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-10",
-  "total_trades": 17,
-  "total_commission": 0.7150000000000001
+  "last_update": "2026-07-13",
+  "total_trades": 21,
+  "total_commission": 0.9300000000000002
 }
