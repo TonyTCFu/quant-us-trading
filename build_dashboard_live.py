@@ -560,4 +560,19 @@ if __name__ == "__main__":
                 '</body></html>')
     idx_dst.write_text(redirect)
     print(f"Redirect page: {idx_dst}")
+
+    # 刷新 CDN 缓存
+    import subprocess
+    token_file = deploy_dir / ".gh_token"
+    if token_file.exists():
+        token = token_file.read_text().strip()
+        result = subprocess.run([
+            "curl", "-s", "-X", "POST",
+            "https://api.github.com/repos/TonyTCFu/cc-us-stock-dashboard/pages/builds",
+            "-H", f"Authorization: Bearer {token}",
+            "-H", "Accept: application/vnd.github+json",
+            "-w", "%{http_code}", "-o", "/dev/null"
+        ], capture_output=True, text=True)
+        print(f"CDN cache bust: HTTP {result.stdout.strip()}")
+
     print("Deploy: git -C deploy add dash.html && git -C deploy commit -m 'Update' && git -C deploy push")
