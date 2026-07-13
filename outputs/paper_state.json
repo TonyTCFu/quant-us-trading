@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 208.95894500000426,
+  "cash": 18.97122000000286,
   "positions": {
     "JNJ": {
       "shares": 20,
@@ -33,27 +33,27 @@
       "entry_price": 1009.4895
     },
     "GOOGL": {
-      "shares": 14,
-      "avg_cost": 367.1785,
+      "shares": 5,
+      "avg_cost": 366.5282,
       "entry_date": "2026-07-07",
-      "entry_price": 367.1785
-    },
-    "META": {
-      "shares": 2,
-      "avg_cost": 615.7227,
-      "entry_date": "2026-07-07",
-      "entry_price": 615.7227
+      "entry_price": 366.5282
     },
     "AMZN": {
       "shares": 1,
-      "avg_cost": 245.8278,
+      "avg_cost": 244.2871,
       "entry_date": "2026-07-07",
-      "entry_price": 245.8278
+      "entry_price": 244.2871
+    },
+    "META": {
+      "shares": 7,
+      "avg_cost": 631.8007,
+      "entry_date": "2026-07-10",
+      "entry_price": 631.8007
     },
     "NFLX": {
-      "shares": 0,
+      "shares": 4,
       "avg_cost": 75.5027,
-      "entry_date": "2026-07-09",
+      "entry_date": "2026-07-10",
       "entry_price": 75.5027
     }
   },
@@ -180,32 +180,11 @@
     },
     {
       "date": "2026-07-07",
-      "ticker": "CAT",
-      "side": "SELL",
-      "shares": 5,
-      "price": 940.08,
-      "proceeds": 4698.02,
-      "pnl": -349.42,
-      "pnl_pct": -0.0692,
-      "holding_days": 6,
-      "reason": "STOP_LOSS (-6.9%)"
-    },
-    {
-      "date": "2026-07-07",
       "ticker": "GOOGL",
       "side": "BUY",
-      "shares": 14,
-      "price": 366.99,
-      "cost": 5140.5,
-      "reason": "SIGNAL"
-    },
-    {
-      "date": "2026-07-07",
-      "ticker": "META",
-      "side": "BUY",
-      "shares": 2,
-      "price": 615.41,
-      "cost": 1231.45,
+      "shares": 5,
+      "price": 366.34,
+      "cost": 1832.64,
       "reason": "SIGNAL"
     },
     {
@@ -213,30 +192,39 @@
       "ticker": "AMZN",
       "side": "BUY",
       "shares": 1,
-      "price": 245.7,
-      "cost": 245.83,
+      "price": 244.16,
+      "cost": 244.29,
       "reason": "SIGNAL"
     },
     {
-      "date": "2026-07-09",
-      "ticker": "NFLX",
+      "date": "2026-07-10",
+      "ticker": "CAT",
+      "side": "SELL",
+      "shares": 5,
+      "price": 937.97,
+      "proceeds": 4687.48,
+      "pnl": -359.97,
+      "pnl_pct": -0.0713,
+      "holding_days": 9,
+      "reason": "STOP_LOSS (-7.1%)"
+    },
+    {
+      "date": "2026-07-10",
+      "ticker": "META",
       "side": "BUY",
-      "shares": 2,
-      "price": 75.46,
-      "cost": 151.01,
+      "shares": 7,
+      "price": 631.48,
+      "cost": 4422.61,
       "reason": "SIGNAL"
     },
     {
       "date": "2026-07-10",
       "ticker": "NFLX",
-      "side": "SELL",
-      "shares": 2,
-      "price": 73.38,
-      "proceeds": 146.68,
-      "pnl": -4.33,
-      "pnl_pct": -0.0287,
-      "holding_days": 1,
-      "reason": "SIGNAL_SELL"
+      "side": "BUY",
+      "shares": 4,
+      "price": 75.46,
+      "cost": 302.01,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -298,39 +286,39 @@
     },
     {
       "date": "2026-07-07",
-      "equity": 21373.09,
-      "cash": 213.29,
-      "position_value": 21159.8,
-      "total_return": 0.0687,
+      "equity": 21517.19,
+      "cash": 56.11,
+      "position_value": 21461.08,
+      "total_return": 0.0759,
       "positions": 6
     },
     {
       "date": "2026-07-08",
-      "equity": 20942.51,
-      "cash": 213.29,
-      "position_value": 20729.22,
-      "total_return": 0.0471,
+      "equity": 21449.92,
+      "cash": 56.11,
+      "position_value": 21393.82,
+      "total_return": 0.0725,
       "positions": 6
     },
     {
       "date": "2026-07-09",
-      "equity": 20979.62,
-      "cash": 62.28,
-      "position_value": 20917.34,
-      "total_return": 0.049,
-      "positions": 7
+      "equity": 21449.92,
+      "cash": 56.11,
+      "position_value": 21393.82,
+      "total_return": 0.0725,
+      "positions": 6
     },
     {
       "date": "2026-07-10",
-      "equity": 20998.27,
-      "cash": 208.96,
-      "position_value": 20789.31,
-      "total_return": 0.0499,
-      "positions": 6
+      "equity": 21014.71,
+      "cash": 18.97,
+      "position_value": 20995.74,
+      "total_return": 0.0507,
+      "positions": 7
     }
   ],
   "start_date": "2026-06-12",
   "last_update": "2026-07-10",
-  "total_trades": 18,
-  "total_commission": 0.735
+  "total_trades": 17,
+  "total_commission": 0.7150000000000001
 }
