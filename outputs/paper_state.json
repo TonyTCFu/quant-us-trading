@@ -377,10 +377,18 @@
       "position_value": 20981.74,
       "total_return": 0.0519,
       "positions": 7
+    },
+    {
+      "date": "2026-07-14",
+      "equity": 21317.5,
+      "cash": 56.04,
+      "position_value": 21261.46,
+      "total_return": 0.0659,
+      "positions": 7
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-13",
+  "last_update": "2026-07-14",
   "total_trades": 21,
   "total_commission": 0.9300000000000002
 }
