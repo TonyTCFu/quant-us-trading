@@ -1,12 +1,12 @@
 {
   "initial_capital": 20000.0,
-  "cash": 56.04373500000406,
+  "cash": 146.70991500000673,
   "positions": {
     "JNJ": {
-      "shares": 20,
-      "avg_cost": 263.1765,
-      "entry_date": "2026-07-06",
-      "entry_price": 263.1765
+      "shares": 21,
+      "avg_cost": 247.1085,
+      "entry_date": "2026-07-15",
+      "entry_price": 247.1085
     },
     "GE": {
       "shares": 0,
@@ -15,10 +15,10 @@
       "entry_price": 374.3921
     },
     "JPM": {
-      "shares": 12,
-      "avg_cost": 313.7018,
-      "entry_date": "2026-06-12",
-      "entry_price": 313.7018
+      "shares": 11,
+      "avg_cost": 347.1985,
+      "entry_date": "2026-07-15",
+      "entry_price": 347.1985
     },
     "GS": {
       "shares": 0,
@@ -279,6 +279,48 @@
       "price": 317.47,
       "cost": 317.63,
       "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-15",
+      "ticker": "JNJ",
+      "side": "SELL",
+      "shares": 20,
+      "price": 246.98,
+      "proceeds": 4937.03,
+      "pnl": -326.5,
+      "pnl_pct": -0.062,
+      "holding_days": 9,
+      "reason": "STOP_LOSS (-6.2%)"
+    },
+    {
+      "date": "2026-07-15",
+      "ticker": "JPM",
+      "side": "SELL",
+      "shares": 12,
+      "price": 347.02,
+      "proceeds": 4162.1,
+      "pnl": 397.68,
+      "pnl_pct": 0.1056,
+      "holding_days": 33,
+      "reason": "TAKE_PROFIT (10.6%)"
+    },
+    {
+      "date": "2026-07-15",
+      "ticker": "JNJ",
+      "side": "BUY",
+      "shares": 21,
+      "price": 246.98,
+      "cost": 5189.28,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-15",
+      "ticker": "JPM",
+      "side": "BUY",
+      "shares": 11,
+      "price": 347.02,
+      "cost": 3819.18,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -385,10 +427,18 @@
       "position_value": 21261.46,
       "total_return": 0.0659,
       "positions": 7
+    },
+    {
+      "date": "2026-07-15",
+      "equity": 21456.61,
+      "cash": 146.71,
+      "position_value": 21309.9,
+      "total_return": 0.0728,
+      "positions": 7
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-14",
-  "total_trades": 21,
-  "total_commission": 0.9300000000000002
+  "last_update": "2026-07-15",
+  "total_trades": 25,
+  "total_commission": 1.2500000000000002
 }
