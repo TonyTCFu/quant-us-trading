@@ -540,29 +540,35 @@ if __name__ == "__main__":
         print("Dashboard build returned None — skip deploy")
         sys.exit(0)
 
-    # Auto-deploy: copy to deploy/ and create thin redirect
+    build_id = datetime.now().strftime("%Y%m%d%H%M%S")
+
+    # Auto-deploy: unique versioned filename to defeat browser caches
     deploy_dir = Path("deploy")
     deploy_dir.mkdir(exist_ok=True)
-    dash_dst = deploy_dir / "dash.html"
+    dash_name = f"dash_{build_id}.html"
+    dash_dst = deploy_dir / dash_name
     shutil.copy(out, dash_dst)
     print(f"Deploy copy: {dash_dst} ({dash_dst.stat().st_size} bytes)")
 
-    # Ensure index.html redirect exists (don't overwrite existing)
+    import subprocess
+
+    # index.html redirect to the versioned file, with localStorage tracking
     idx_dst = deploy_dir / "index.html"
-    redirect = ('<!DOCTYPE html>\n<html lang="zh"><head>\n'
-                '<meta charset="UTF-8">\n'
-                '<meta http-equiv="Cache-Control" content="no-store">\n'
-                '<meta http-equiv="refresh" content="0;url=dash.html">\n'
-                '<title>美股量化 Dashboard</title>\n</head>\n'
-                '<body style="background:#0f1117;color:#e1e4e8;text-align:center;padding-top:40vh">\n'
-                '<p>加载中...</p>\n'
-                '<script>location.replace("dash.html");</script>\n'
-                '</body></html>')
+    redirect = (
+        '<!DOCTYPE html>\n<html lang="zh"><head>\n'
+        '<meta charset="UTF-8">\n'
+        '<meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate">\n'
+        '</head>\n<body style="background:#0f1117;color:#e1e4e8;text-align:center;padding-top:40vh">\n'
+        '<p>📊 加载中...</p>\n'
+        '<script>\n'
+        'var b=localStorage.getItem("dash_ver"),c="'+build_id+'";'
+        'if(b!==c){document.querySelector("p").textContent="🔄 更新中...";localStorage.setItem("dash_ver",c)}'
+        'location.replace("'+dash_name+'");\n'
+        '</script>\n</body></html>')
     idx_dst.write_text(redirect)
-    print(f"Redirect page: {idx_dst}")
+    print(f"Redirect: {idx_dst} -> {dash_name}")
 
     # 刷新 CDN 缓存
-    import subprocess
     token_file = deploy_dir / ".gh_token"
     if token_file.exists():
         token = token_file.read_text().strip()
@@ -575,4 +581,4 @@ if __name__ == "__main__":
         ], capture_output=True, text=True)
         print(f"CDN cache bust: HTTP {result.stdout.strip()}")
 
-    print("Deploy: git -C deploy add dash.html && git -C deploy commit -m 'Update' && git -C deploy push")
+    print(f"Deploy: git -C deploy add {dash_name} index.html && git -C deploy commit && git -C deploy push")
