@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 315.61239000000376,
+  "cash": 77.46046500000375,
   "positions": {
     "JNJ": {
       "shares": 20,
@@ -33,7 +33,7 @@
       "entry_price": 1009.4895
     },
     "GOOGL": {
-      "shares": 5,
+      "shares": 0,
       "avg_cost": 366.5282,
       "entry_date": "2026-07-07",
       "entry_price": 366.5282
@@ -61,6 +61,12 @@
       "avg_cost": 207.5187,
       "entry_date": "2026-07-13",
       "entry_price": 207.5187
+    },
+    "MSFT": {
+      "shares": 5,
+      "avg_cost": 394.212,
+      "entry_date": "2026-07-17",
+      "entry_price": 394.212
     }
   },
   "trade_log": [
@@ -264,6 +270,27 @@
       "pnl_pct": -0.0095,
       "holding_days": 3,
       "reason": "SIGNAL_SELL"
+    },
+    {
+      "date": "2026-07-17",
+      "ticker": "GOOGL",
+      "side": "SELL",
+      "shares": 5,
+      "price": 346.76,
+      "proceeds": 1732.91,
+      "pnl": -99.73,
+      "pnl_pct": -0.0544,
+      "holding_days": 10,
+      "reason": "STOP_LOSS (-5.4%)"
+    },
+    {
+      "date": "2026-07-17",
+      "ticker": "MSFT",
+      "side": "BUY",
+      "shares": 5,
+      "price": 394.01,
+      "cost": 1971.06,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -386,10 +413,18 @@
       "position_value": 20507.93,
       "total_return": 0.0412,
       "positions": 6
+    },
+    {
+      "date": "2026-07-17",
+      "equity": 20837.47,
+      "cash": 77.46,
+      "position_value": 20760.01,
+      "total_return": 0.0419,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-16",
-  "total_trades": 20,
-  "total_commission": 0.9250000000000002
+  "last_update": "2026-07-17",
+  "total_trades": 22,
+  "total_commission": 0.9750000000000002
 }
