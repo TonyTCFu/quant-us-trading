@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 122.51853500000323,
+  "cash": 121.48446500000318,
   "positions": {
     "JNJ": {
       "shares": 0,
@@ -15,10 +15,10 @@
       "entry_price": 374.3921
     },
     "JPM": {
-      "shares": 12,
-      "avg_cost": 313.7018,
-      "entry_date": "2026-06-12",
-      "entry_price": 313.7018
+      "shares": 14,
+      "avg_cost": 345.3276,
+      "entry_date": "2026-07-21",
+      "entry_price": 345.3276
     },
     "GS": {
       "shares": 4,
@@ -33,7 +33,7 @@
       "entry_price": 1009.4895
     },
     "GOOGL": {
-      "shares": 2,
+      "shares": 0,
       "avg_cost": 352.2911,
       "entry_date": "2026-07-20",
       "entry_price": 352.2911
@@ -321,6 +321,39 @@
       "price": 352.11,
       "cost": 704.58,
       "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-21",
+      "ticker": "JPM",
+      "side": "SELL",
+      "shares": 12,
+      "price": 345.15,
+      "proceeds": 4139.67,
+      "pnl": 375.25,
+      "pnl_pct": 0.0997,
+      "holding_days": 39,
+      "reason": "TAKE_PROFIT (10.0%)"
+    },
+    {
+      "date": "2026-07-21",
+      "ticker": "GOOGL",
+      "side": "SELL",
+      "shares": 2,
+      "price": 347.12,
+      "proceeds": 693.88,
+      "pnl": -10.7,
+      "pnl_pct": -0.0152,
+      "holding_days": 1,
+      "reason": "SIGNAL_SELL"
+    },
+    {
+      "date": "2026-07-21",
+      "ticker": "JPM",
+      "side": "BUY",
+      "shares": 14,
+      "price": 345.15,
+      "cost": 4834.59,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -459,10 +492,18 @@
       "position_value": 20656.83,
       "total_return": 0.039,
       "positions": 7
+    },
+    {
+      "date": "2026-07-21",
+      "equity": 21010.59,
+      "cash": 121.48,
+      "position_value": 20889.11,
+      "total_return": 0.0505,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-20",
-  "total_trades": 25,
-  "total_commission": 1.1050000000000002
+  "last_update": "2026-07-21",
+  "total_trades": 28,
+  "total_commission": 1.2450000000000003
 }
