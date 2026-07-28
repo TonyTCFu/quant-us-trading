@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 5226.055165000003,
+  "cash": 10183.390195000004,
   "positions": {
     "JNJ": {
       "shares": 0,
@@ -39,7 +39,7 @@
       "entry_price": 366.5282
     },
     "AMZN": {
-      "shares": 1,
+      "shares": 0,
       "avg_cost": 244.2871,
       "entry_date": "2026-07-07",
       "entry_price": 244.2871
@@ -57,7 +57,7 @@
       "entry_price": 75.5027
     },
     "NVDA": {
-      "shares": 24,
+      "shares": 0,
       "avg_cost": 207.5187,
       "entry_date": "2026-07-13",
       "entry_price": 207.5187
@@ -372,6 +372,30 @@
       "pnl_pct": -0.0523,
       "holding_days": 6,
       "reason": "STOP_LOSS (-5.2%)"
+    },
+    {
+      "date": "2026-07-28",
+      "ticker": "AMZN",
+      "side": "SELL",
+      "shares": 1,
+      "price": 230.74,
+      "proceeds": 230.62,
+      "pnl": -13.67,
+      "pnl_pct": -0.0559,
+      "holding_days": 21,
+      "reason": "STOP_LOSS (-5.5%)"
+    },
+    {
+      "date": "2026-07-28",
+      "ticker": "NVDA",
+      "side": "SELL",
+      "shares": 24,
+      "price": 197.05,
+      "proceeds": 4726.72,
+      "pnl": -253.73,
+      "pnl_pct": -0.0509,
+      "holding_days": 15,
+      "reason": "STOP_LOSS (-5.0%)"
     }
   ],
   "equity_history": [
@@ -542,10 +566,18 @@
       "position_value": 15409.98,
       "total_return": 0.0318,
       "positions": 5
+    },
+    {
+      "date": "2026-07-28",
+      "equity": 20357.79,
+      "cash": 10183.39,
+      "position_value": 10174.4,
+      "total_return": 0.0179,
+      "positions": 3
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-27",
-  "total_trades": 29,
-  "total_commission": 1.27
+  "last_update": "2026-07-28",
+  "total_trades": 31,
+  "total_commission": 1.395
 }
