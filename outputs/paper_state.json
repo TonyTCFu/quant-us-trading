@@ -1,6 +1,6 @@
 {
   "initial_capital": 20000.0,
-  "cash": 10183.390195000004,
+  "cash": 14105.328235000004,
   "positions": {
     "JNJ": {
       "shares": 0,
@@ -21,7 +21,7 @@
       "entry_price": 345.3276
     },
     "GS": {
-      "shares": 4,
+      "shares": 0,
       "avg_cost": 1056.1928,
       "entry_date": "2026-07-21",
       "entry_price": 1056.1928
@@ -396,6 +396,18 @@
       "pnl_pct": -0.0509,
       "holding_days": 15,
       "reason": "STOP_LOSS (-5.0%)"
+    },
+    {
+      "date": "2026-07-29",
+      "ticker": "GS",
+      "side": "SELL",
+      "shares": 4,
+      "price": 980.98,
+      "proceeds": 3921.94,
+      "pnl": -302.83,
+      "pnl_pct": -0.0717,
+      "holding_days": 8,
+      "reason": "STOP_LOSS (-7.1%)"
     }
   ],
   "equity_history": [
@@ -574,10 +586,18 @@
       "position_value": 10174.4,
       "total_return": 0.0179,
       "positions": 3
+    },
+    {
+      "date": "2026-07-29",
+      "equity": 19957.09,
+      "cash": 14105.33,
+      "position_value": 5851.76,
+      "total_return": -0.0021,
+      "positions": 2
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-28",
-  "total_trades": 31,
-  "total_commission": 1.395
+  "last_update": "2026-07-29",
+  "total_trades": 32,
+  "total_commission": 1.415
 }
