@@ -1,18 +1,18 @@
 {
   "initial_capital": 20000.0,
-  "cash": 14105.328235000004,
+  "cash": 4266.856540000006,
   "positions": {
     "JNJ": {
-      "shares": 0,
-      "avg_cost": 263.1765,
-      "entry_date": "2026-07-06",
-      "entry_price": 263.1765
+      "shares": 19,
+      "avg_cost": 255.9829,
+      "entry_date": "2026-07-30",
+      "entry_price": 255.9829
     },
     "GE": {
-      "shares": 0,
-      "avg_cost": 374.3921,
-      "entry_date": "2026-07-01",
-      "entry_price": 374.3921
+      "shares": 14,
+      "avg_cost": 355.3426,
+      "entry_date": "2026-07-30",
+      "entry_price": 355.3426
     },
     "JPM": {
       "shares": 15,
@@ -408,6 +408,24 @@
       "pnl_pct": -0.0717,
       "holding_days": 8,
       "reason": "STOP_LOSS (-7.1%)"
+    },
+    {
+      "date": "2026-07-30",
+      "ticker": "GE",
+      "side": "BUY",
+      "shares": 14,
+      "price": 355.16,
+      "cost": 4974.8,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-30",
+      "ticker": "JNJ",
+      "side": "BUY",
+      "shares": 19,
+      "price": 255.85,
+      "cost": 4863.68,
+      "reason": "SIGNAL"
     }
   ],
   "equity_history": [
@@ -594,10 +612,18 @@
       "position_value": 5851.76,
       "total_return": -0.0021,
       "positions": 2
+    },
+    {
+      "date": "2026-07-30",
+      "equity": 20029.59,
+      "cash": 4266.86,
+      "position_value": 15762.73,
+      "total_return": 0.0015,
+      "positions": 4
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-29",
-  "total_trades": 32,
-  "total_commission": 1.415
+  "last_update": "2026-07-30",
+  "total_trades": 34,
+  "total_commission": 1.58
 }
