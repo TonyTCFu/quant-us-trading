@@ -1,90 +1,42 @@
 {
   "initial_capital": 20000.0,
-  "cash": 22.090955000002978,
+  "cash": 76573.92,
   "positions": {
-    "JNJ": {
-      "shares": 18,
-      "avg_cost": 265.8078,
-      "entry_date": "2026-07-30",
-      "entry_price": 265.8078
+    "BAC": {
+      "shares": 85,
+      "avg_cost": 61.96,
+      "entry_date": "",
+      "entry_price": 61.96
     },
     "GE": {
       "shares": 13,
-      "avg_cost": 355.3426,
-      "entry_date": "2026-07-31",
-      "entry_price": 355.3426
+      "avg_cost": 359.14,
+      "entry_date": "",
+      "entry_price": 359.14
+    },
+    "JNJ": {
+      "shares": 18,
+      "avg_cost": 256.38,
+      "entry_date": "",
+      "entry_price": 256.38
     },
     "JPM": {
       "shares": 15,
-      "avg_cost": 345.3276,
-      "entry_date": "2026-07-22",
-      "entry_price": 345.3276
+      "avg_cost": 353.47,
+      "entry_date": "",
+      "entry_price": 353.47
     },
-    "GS": {
-      "shares": 0,
-      "avg_cost": 1056.1928,
-      "entry_date": "2026-07-21",
-      "entry_price": 1056.1928
-    },
-    "CAT": {
-      "shares": 0,
-      "avg_cost": 1009.4895,
-      "entry_date": "2026-07-01",
-      "entry_price": 1009.4895
-    },
-    "GOOGL": {
-      "shares": 0,
-      "avg_cost": 366.5282,
-      "entry_date": "2026-07-07",
-      "entry_price": 366.5282
-    },
-    "AMZN": {
-      "shares": 0,
-      "avg_cost": 244.2871,
-      "entry_date": "2026-07-07",
-      "entry_price": 244.2871
-    },
-    "META": {
-      "shares": 0,
-      "avg_cost": 631.8007,
-      "entry_date": "2026-07-10",
-      "entry_price": 631.8007
-    },
-    "NFLX": {
-      "shares": 0,
-      "avg_cost": 75.5027,
-      "entry_date": "2026-07-10",
-      "entry_price": 75.5027
-    },
-    "NVDA": {
-      "shares": 0,
-      "avg_cost": 207.5187,
-      "entry_date": "2026-07-13",
-      "entry_price": 207.5187
-    },
-    "MSFT": {
-      "shares": 0,
-      "avg_cost": 402.6862,
-      "entry_date": "2026-07-21",
-      "entry_price": 402.6862
-    },
-    "AAPL": {
-      "shares": 0,
-      "avg_cost": 327.8288,
-      "entry_date": "2026-07-22",
-      "entry_price": 327.8288
-    },
-    "BAC": {
-      "shares": 85,
-      "avg_cost": 61.8859,
-      "entry_date": "2026-07-31",
-      "entry_price": 61.8859
+    "KO": {
+      "shares": 63,
+      "avg_cost": 87.54,
+      "entry_date": "",
+      "entry_price": 87.54
     },
     "T": {
       "shares": 1,
-      "avg_cost": 23.4067,
-      "entry_date": "2026-07-31",
-      "entry_price": 23.4067
+      "avg_cost": 23.37,
+      "entry_date": "",
+      "entry_price": 23.37
     }
   },
   "trade_log": [
@@ -678,6 +630,14 @@
       "position_value": 19800.03,
       "total_return": -0.0089,
       "positions": 5
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 101950.99,
+      "cash": 76573.92,
+      "position_value": 25377.06,
+      "total_return": 4.0975,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",

@@ -497,6 +497,25 @@ def cmd_update():
     # 保存
     save_state(state)
 
+    # ── Alpaca 真实下单 ──
+    try:
+        from src.execution.alpaca_trader import AlpacaTrader
+        trader = AlpacaTrader()
+        # 同步 Alpaca 真实持仓到 paper_state
+        trader.sync_to_simulation(state)
+        save_state(state)
+        # 执行交易信号
+        orders = trader.execute_daily_signals(state, signals, macro)
+        if orders:
+            logger.info("Alpaca 订单: %d 笔已提交", len(orders))
+            for o in orders:
+                logger.info("  %s %s %d股 %s", o['side'], o['symbol'], o['qty'], o.get('type', ''))
+        # 同步执行后的状态
+        trader.sync_to_simulation(state)
+        save_state(state)
+    except Exception as e:
+        logger.warning("Alpaca 下单失败 (非交易时间或网络问题): %s", e)
+
     # 绩效
     perf = compute_performance(state)
     active = sum(1 for p in state["positions"].values() if p["shares"] > 0)
