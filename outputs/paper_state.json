@@ -1,33 +1,33 @@
 {
   "initial_capital": 20000.0,
-  "cash": 76573.92,
+  "cash": 528.92,
   "positions": {
     "BAC": {
-      "shares": 85,
+      "shares": 66,
       "avg_cost": 61.96,
       "entry_date": "",
       "entry_price": 61.96
     },
     "GE": {
-      "shares": 13,
+      "shares": 10,
       "avg_cost": 359.14,
       "entry_date": "",
       "entry_price": 359.14
     },
     "JNJ": {
-      "shares": 18,
+      "shares": 14,
       "avg_cost": 256.38,
       "entry_date": "",
       "entry_price": 256.38
     },
     "JPM": {
-      "shares": 15,
+      "shares": 11,
       "avg_cost": 353.47,
       "entry_date": "",
       "entry_price": 353.47
     },
     "KO": {
-      "shares": 63,
+      "shares": 49,
       "avg_cost": 87.54,
       "entry_date": "",
       "entry_price": 87.54
@@ -638,10 +638,28 @@
       "position_value": 25377.06,
       "total_return": 4.0975,
       "positions": 6
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 102004.43,
+      "cash": 82502.12,
+      "position_value": 19502.31,
+      "total_return": 4.1002,
+      "positions": 6
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 20031.25,
+      "cash": 528.92,
+      "position_value": 19502.33,
+      "total_return": 0.0016,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",
   "last_update": "2026-07-31",
-  "total_trades": 37,
-  "total_commission": 2.01
+  "total_trades": 48,
+  "total_commission": 2.01,
+  "account_cash": 82502.12,
+  "account_equity": 102004.45
 }

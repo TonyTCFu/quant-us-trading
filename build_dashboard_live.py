@@ -520,7 +520,8 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
 
 <h1>【Claude Code】美股量化模型 — 模拟盘实时</h1>
 <div class="subtitle">
-  $20,000 模拟盘 | MA 5/20 + SL5%/TP10% | {state.get('start_date','?')} → {datetime.now().strftime('%Y-%m-%d')} | 目标: 年化 +8%
+  基金规模: <b>$20,000</b> | 模型现值: <b>${equity:,.2f}</b> | 策略: MA 5/20 + SL7%/TP12% | 运行: {state.get('start_date','?')} → {datetime.now().strftime('%Y-%m-%d')}
+  <br>⚠ Alpaca Paper 账户总权益 ${state.get('account_equity',0):,.0f}（含 ${state.get('account_cash',0):,.0f} 自由现金，不归模型管理）
 </div>
 
 <div class="metrics-bar">

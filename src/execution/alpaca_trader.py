@@ -175,22 +175,39 @@ class AlpacaTrader:
 
     # ─── 同步 ───
     def sync_to_simulation(self, state: dict):
-        """从 Alpaca 真实持仓覆盖 paper_state.json 的持仓数据。"""
+        """从 Alpaca 持仓更新 paper_state.json — 仅同步模型管理的持仓，不碰账户现金。"""
         self.refresh()
         acct = self.account
-        cash = float(acct.cash)
-        equity = float(acct.equity)
+        account_equity = float(acct.equity)
+        model_budget = state.get("initial_capital", 20000.0)
 
-        state["cash"] = round(cash, 2)
         state["positions"] = {}
+        deployed_cost = 0.0
+        deployed_market = 0.0
         for sym, pos in self.positions.items():
+            qty = int(float(pos.qty))
+            cost = float(pos.avg_entry_price) * qty
+            mkt = float(pos.current_price) * qty
             state["positions"][sym] = {
-                "shares": int(float(pos.qty)),
+                "shares": qty,
                 "avg_cost": round(float(pos.avg_entry_price), 4),
-                "entry_date": "",
+                "entry_date": state['positions'].get(sym, {}).get('entry_date', ''),
                 "entry_price": round(float(pos.avg_entry_price), 4),
             }
-        logger.info(f"📊 同步完成: {len(self.positions)} 持仓, 现金 ${cash:,.2f}, 权益 ${equity:,.2f}")
+            deployed_cost += cost
+            deployed_market += mkt
+
+        # 模型管理的现金 = 预算 - 已部署成本 (不是账户总现金)
+        model_cash = model_budget - deployed_cost
+        model_equity = model_cash + deployed_market
+
+        state["cash"] = round(model_cash, 2)
+        state["account_cash"] = round(float(acct.cash), 2)
+        state["account_equity"] = round(account_equity, 2)
+
+        logger.info(f"📊 同步: 模型 ${model_budget:,.0f} 规模 | {len(self.positions)} 持仓 | "
+                    f"部署 ${deployed_cost:,.0f} | 现金 ${model_cash:,.0f} | "
+                    f"账户总权益 ${account_equity:,.0f}")
         return state
 
     def execute_daily_signals(self, paper_state: dict, signals: dict, macro: dict):
