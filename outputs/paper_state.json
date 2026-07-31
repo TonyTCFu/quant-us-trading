@@ -1,17 +1,17 @@
 {
   "initial_capital": 20000.0,
-  "cash": 4266.856540000006,
+  "cash": 22.090955000002978,
   "positions": {
     "JNJ": {
-      "shares": 19,
-      "avg_cost": 255.9829,
+      "shares": 18,
+      "avg_cost": 265.8078,
       "entry_date": "2026-07-30",
-      "entry_price": 255.9829
+      "entry_price": 265.8078
     },
     "GE": {
-      "shares": 14,
+      "shares": 13,
       "avg_cost": 355.3426,
-      "entry_date": "2026-07-30",
+      "entry_date": "2026-07-31",
       "entry_price": 355.3426
     },
     "JPM": {
@@ -69,10 +69,22 @@
       "entry_price": 402.6862
     },
     "AAPL": {
-      "shares": 2,
+      "shares": 0,
       "avg_cost": 327.8288,
       "entry_date": "2026-07-22",
       "entry_price": 327.8288
+    },
+    "BAC": {
+      "shares": 85,
+      "avg_cost": 61.8859,
+      "entry_date": "2026-07-31",
+      "entry_price": 61.8859
+    },
+    "T": {
+      "shares": 1,
+      "avg_cost": 23.4067,
+      "entry_date": "2026-07-31",
+      "entry_price": 23.4067
     }
   },
   "trade_log": [
@@ -374,7 +386,7 @@
       "reason": "STOP_LOSS (-5.2%)"
     },
     {
-      "date": "2026-07-28",
+      "date": "2026-07-29",
       "ticker": "AMZN",
       "side": "SELL",
       "shares": 1,
@@ -382,11 +394,11 @@
       "proceeds": 230.62,
       "pnl": -13.67,
       "pnl_pct": -0.0559,
-      "holding_days": 21,
+      "holding_days": 22,
       "reason": "STOP_LOSS (-5.5%)"
     },
     {
-      "date": "2026-07-28",
+      "date": "2026-07-29",
       "ticker": "NVDA",
       "side": "SELL",
       "shares": 24,
@@ -394,11 +406,11 @@
       "proceeds": 4726.72,
       "pnl": -253.73,
       "pnl_pct": -0.0509,
-      "holding_days": 15,
+      "holding_days": 16,
       "reason": "STOP_LOSS (-5.0%)"
     },
     {
-      "date": "2026-07-29",
+      "date": "2026-07-30",
       "ticker": "GS",
       "side": "SELL",
       "shares": 4,
@@ -406,25 +418,55 @@
       "proceeds": 3921.94,
       "pnl": -302.83,
       "pnl_pct": -0.0717,
-      "holding_days": 8,
+      "holding_days": 9,
       "reason": "STOP_LOSS (-7.1%)"
-    },
-    {
-      "date": "2026-07-30",
-      "ticker": "GE",
-      "side": "BUY",
-      "shares": 14,
-      "price": 355.16,
-      "cost": 4974.8,
-      "reason": "SIGNAL"
     },
     {
       "date": "2026-07-30",
       "ticker": "JNJ",
       "side": "BUY",
-      "shares": 19,
-      "price": 255.85,
-      "cost": 4863.68,
+      "shares": 18,
+      "price": 265.67,
+      "cost": 4784.54,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-31",
+      "ticker": "GE",
+      "side": "BUY",
+      "shares": 13,
+      "price": 355.16,
+      "cost": 4619.45,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-31",
+      "ticker": "AAPL",
+      "side": "SELL",
+      "shares": 2,
+      "price": 302.39,
+      "proceeds": 604.47,
+      "pnl": -51.19,
+      "pnl_pct": -0.0781,
+      "holding_days": 9,
+      "reason": "STOP_LOSS (-7.8%)"
+    },
+    {
+      "date": "2026-07-31",
+      "ticker": "BAC",
+      "side": "BUY",
+      "shares": 85,
+      "price": 61.85,
+      "cost": 5260.3,
+      "reason": "SIGNAL"
+    },
+    {
+      "date": "2026-07-31",
+      "ticker": "T",
+      "side": "BUY",
+      "shares": 1,
+      "price": 23.39,
+      "cost": 23.41,
       "reason": "SIGNAL"
     }
   ],
@@ -599,6 +641,14 @@
     },
     {
       "date": "2026-07-28",
+      "equity": 20511.13,
+      "cash": 5226.06,
+      "position_value": 15285.08,
+      "total_return": 0.0256,
+      "positions": 5
+    },
+    {
+      "date": "2026-07-29",
       "equity": 20357.79,
       "cash": 10183.39,
       "position_value": 10174.4,
@@ -606,24 +656,32 @@
       "positions": 3
     },
     {
-      "date": "2026-07-29",
-      "equity": 19957.09,
-      "cash": 14105.33,
-      "position_value": 5851.76,
-      "total_return": -0.0021,
-      "positions": 2
+      "date": "2026-07-30",
+      "equity": 19954.61,
+      "cash": 9320.79,
+      "position_value": 10633.82,
+      "total_return": -0.0023,
+      "positions": 3
     },
     {
-      "date": "2026-07-30",
-      "equity": 20029.59,
-      "cash": 4266.86,
-      "position_value": 15762.73,
-      "total_return": 0.0015,
+      "date": "2026-07-31",
+      "equity": 19853.05,
+      "cash": 4701.33,
+      "position_value": 15151.72,
+      "total_return": -0.0073,
       "positions": 4
+    },
+    {
+      "date": "2026-07-31",
+      "equity": 19822.12,
+      "cash": 22.09,
+      "position_value": 19800.03,
+      "total_return": -0.0089,
+      "positions": 5
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-07-30",
-  "total_trades": 34,
-  "total_commission": 1.58
+  "last_update": "2026-07-31",
+  "total_trades": 37,
+  "total_commission": 2.01
 }
