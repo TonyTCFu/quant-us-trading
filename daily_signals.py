@@ -28,9 +28,10 @@ logging.basicConfig(level=logging.INFO, format="%(message)s")
 logger = logging.getLogger(__name__)
 
 # 最优参数（来自网格搜索 + 滚动验证）
-OPTIMAL_PARAMS = {"fast": 5, "slow": 20, "stop_loss": -0.05, "take_profit": 0.10}
+OPTIMAL_PARAMS = {"fast": 5, "slow": 20, "stop_loss": -0.07, "take_profit": 0.12}
 
-TOP_TICKERS = ["GS", "GE", "NVDA", "JNJ", "GOOGL", "CAT", "META", "JPM", "NFLX", "WMT"]
+TOP_TICKERS = ["NVDA", "CSCO", "GOOGL", "META", "BAC", "NFLX", "WMT", "AMZN", "MSFT", "AAPL",
+               "TSLA", "AMD", "JPM", "GS", "GE", "JNJ", "CAT", "VZ", "T", "KO"]
 
 
 def load_top_tickers(n: int = 10, scan_file: str = "outputs/market_scan.csv") -> list:

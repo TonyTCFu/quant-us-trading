@@ -35,12 +35,13 @@ logger = logging.getLogger("PaperTrading")
 
 # ── 配置 ──
 INITIAL_CAPITAL = 20_000.0
-UNIVERSE = ["GS", "GE", "NVDA", "JNJ", "GOOGL", "CAT", "META", "JPM", "NFLX", "WMT",
-            "AMZN", "MSFT", "AAPL"]
-MAX_POSITIONS = 8
-MAX_POSITION_PCT = 0.25
-STOP_LOSS_PCT = -0.05
-TAKE_PROFIT_PCT = 0.10
+# 激进扩池：20只，覆盖科技/金融/半导体/消费/通信
+UNIVERSE = ["NVDA", "CSCO", "GOOGL", "META", "BAC", "NFLX", "WMT", "AMZN", "MSFT", "AAPL",
+            "TSLA", "AMD", "JPM", "GS", "GE", "JNJ", "CAT", "VZ", "T", "KO"]
+MAX_POSITIONS = 6        # 集中火力，每只仓位更大
+MAX_POSITION_PCT = 0.28  # 单票上限 28%
+STOP_LOSS_PCT = -0.07    # 放宽止损给波动更多空间
+TAKE_PROFIT_PCT = 0.12   # 提高止盈目标
 COMMISSION = 0.005
 SLIPPAGE = 0.0005
 DEVIATION_THRESHOLD = 0.05   # 价格偏离 MA5 超过 5% 不追高，强趋势自动放宽至 8%
