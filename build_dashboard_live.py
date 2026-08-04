@@ -732,21 +732,15 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
         '</table></div>\n</details>\n\n<div class="footer">'
     )
 
-    # 基金经理总结报告子区块折叠 (h3 → details/summary)
-    summary_start = html.find('<h2>📊 基金经理总结报告</h2>')
-    footer_pos = html.find('<div class="footer">')
-    if summary_start > 0 and footer_pos > summary_start:
-        before_footer = html[:footer_pos]
-        last_div = before_footer.rfind('</div>')
-        section = html[summary_start:last_div+6]
-        section, _ = re.subn(
-            r'<h3[^>]*>(.*?)</h3>',
-            lambda m: f'</details>\n<details style="margin-bottom:4px"><summary style="color:#58a6ff;font-size:13px;cursor:pointer;padding:2px 0">{m.group(1)} ▸</summary>\n{m.group(0)}',
-            section
-        )
-        section = section.replace('</details>\n<details', '<details', 1)
-        section += '\n</details>'
-        html = html[:summary_start] + section + html[last_div+6:]
+    # 基金经理总结报告整体折叠 (不拆 h3)
+    ss = html.find('<h2>📊 基金经理总结报告</h2>')
+    fp = html.find('<div class="footer">')
+    if ss > 0 and fp > ss:
+        bf = html[:fp]; ld = bf.rfind('</div>')
+        body = html[ss:ld+6]
+        html = (html[:ss] +
+            '<details><summary style="color:#58a6ff;font-size:14px;cursor:pointer;padding-bottom:4px;border-bottom:2px solid #30363d;margin-bottom:8px">📊 基金经理总结报告 ▸</summary>\n' +
+            body + '\n</details>\n\n' + html[ld+6:])
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(html)
