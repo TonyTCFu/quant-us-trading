@@ -48,15 +48,22 @@ jobs:
 
       - name: Push to GitHub Pages
         run: |
+          BUILD="dash_$(date +%Y%m%d%H%M%S).html"
           cp outputs/dashboard/live.html /tmp/dash.html
           git clone --depth 1 https://${{ secrets.GH_PAT }}@github.com/TonyTCFu/cc-us-stock-dashboard.git /tmp/dash-repo
-          cp /tmp/dash.html /tmp/dash-repo/dash.html
           cd /tmp/dash-repo
+          cp /tmp/dash.html "$BUILD"
+          printf '<!DOCTYPE html>\n<html lang="zh"><head>\n<meta charset="UTF-8"><meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate">\n</head><body style="background:#0f1117;color:#e1e4e8;text-align:center;padding-top:40vh">\n<p>📊 加载中...</p>\n<script>\nvar b=localStorage.getItem("dash_ver"),c="%s";\nif(b!==c){document.querySelector("p").textContent="🔄 更新中...";localStorage.setItem("dash_ver",c)}\nlocation.replace("%s");\n</script>\n</body></html>\n' "$BUILD" "$BUILD" > index.html
           git config user.name "Quant Bot"
           git config user.email "bot@quant.local"
-          git add dash.html
+          git add "$BUILD" index.html
           git commit -m "Auto $(date +%Y-%m-%d)" || exit 0
-          git push
+          for i in 1 2 3; do
+            if git pull --rebase origin main 2>/dev/null && git push origin main 2>/dev/null; then
+              echo "Push OK on attempt $i"; break
+            fi
+            echo "Push retry $i..."; sleep 3
+          done
 
       - name: Purge CDN cache
         run: |
