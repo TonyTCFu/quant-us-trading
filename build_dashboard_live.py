@@ -102,6 +102,64 @@ def _macro_section() -> str:
 def _summary_section(state: dict, pos_rows: list, trades: list, total_realized: float, equity: float, total_ret: float, ann_ret: float, sharpe: float, max_dd: float, win_rate: float, progress: float) -> str:
     """基金经理深度总结报告 — 激进型风格。"""
     try:
+        report_md_path = "/Users/tonyfu/.gemini/antigravity/scratch/us_paper_trading/weekly_summary_report.md"
+        if Path(report_md_path).exists():
+            md_content = Path(report_md_path).read_text(encoding="utf-8")
+            
+            # A simple markdown to HTML parser
+            html_lines = []
+            in_table = False
+            for line in md_content.split("\n"):
+                line_str = line.strip()
+                if not line_str:
+                    if in_table:
+                        html_lines.append("</table>")
+                        in_table = False
+                    continue
+                
+                # Headers
+                if line_str.startswith("# "):
+                    html_lines.append(f'<h1 style="color:#58a6ff;margin-bottom:12px">{line_str[2:]}</h1>')
+                elif line_str.startswith("## "):
+                    html_lines.append(f'<h3 style="color:#58a6ff;margin-top:16px;margin-bottom:8px">{line_str[3:]}</h3>')
+                elif line_str.startswith("### "):
+                    html_lines.append(f'<h4 style="color:#d2991d;margin-top:10px;margin-bottom:6px">{line_str[4:]}</h4>')
+                # Blockquotes
+                elif line_str.startswith("> "):
+                    html_lines.append(f'<div style="border-left:3px solid #58a6ff;padding-left:10px;color:#8b949e;font-size:11px;margin-bottom:8px"><i>{line_str[2:]}</i></div>')
+                # Tables
+                elif line_str.startswith("|"):
+                    cols = [c.strip() for c in line_str.split("|")[1:-1]]
+                    if all(c.startswith("-") or c.startswith(":") for c in cols):
+                        continue
+                    if not in_table:
+                        html_lines.append('<table style="width:100%;border-collapse:collapse;font-size:11px;margin-bottom:10px">')
+                        in_table = True
+                        html_lines.append("<tr>" + "".join(f'<th style="border-bottom:2px solid #30363d;padding:5px 6px;color:#8b949e">{c}</th>' for c in cols) + "</tr>")
+                    else:
+                        html_lines.append("<tr>" + "".join(f'<td style="border-bottom:1px solid #30363d;padding:4px 6px">{c}</td>' for c in cols) + "</tr>")
+                # Lists
+                elif line_str.startswith("- ") or line_str.startswith("* "):
+                    content = line_str[2:]
+                    import re
+                    content = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', content)
+                    html_lines.append(f'<div style="font-size:10px;color:#8b949e;margin-left:12px;margin-bottom:4px">• {content}</div>')
+                else:
+                    if in_table:
+                        html_lines.append("</table>")
+                        in_table = False
+                    import re
+                    line_str = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', line_str)
+                    html_lines.append(f'<p style="font-size:11px;color:#8b949e;margin-bottom:6px">{line_str}</p>')
+            
+            if in_table:
+                html_lines.append("</table>")
+            
+            return '<div class="card" style="overflow-x:auto">\n' + "\n".join(html_lines) + '\n</div>'
+    except Exception as e:
+        print(f"[Dashboard Build] Error parsing weekly_summary_report.md: {e}")
+
+    try:
         from datetime import datetime, timedelta
         import numpy as np
 
@@ -287,12 +345,14 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
             "days": days, "pnl_color": pnl_color
         })
 
-    equity = state["cash"] + total_pos_value
-    total_ret = (equity / INITIAL) - 1
+    # 模型权益 = 模型现金 + 实时持仓市值 (用于展示当前持仓)
+    live_equity = state["cash"] + total_pos_value
 
-    # Performance
+    # 使用 equity_history 的最后一条计算 KPI (基于历史记录，不因实时价格波动而偏离)
     hist = state.get("equity_history", [])
-    equity_series = pd.Series([h["equity"] for h in hist]) if hist else pd.Series([INITIAL])
+    equity_series = pd.Series([h["equity"] for h in hist]) if hist else pd.Series([INITIAL, live_equity])
+    equity = float(equity_series.iloc[-1])
+    total_ret = (equity / INITIAL) - 1 if INITIAL > 0 else 0
 
     days_run = max(len(equity_series), 1)
     years = days_run / 252
