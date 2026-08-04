@@ -650,6 +650,7 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
 {closed_table}
 </table>""" if closed_table else "<p style='color:#8b949e;padding:8px'>尚无已平仓交易</p>") + """
 </div>
+</details>
 
 <h2>🏦 Alpaca Paper 账户真实持仓（只读）</h2>
 <div class="card">
@@ -674,6 +675,7 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
           <td class="num" style="color:{c}">{ret*100:+.2f}%</td>
           <td class="num">{h['positions']}</td><td class="num">${h['cash']:,.2f}</td></tr>"""
     html += f"""</table></div>
+</details>
 
 <div class="footer">
   自动生成: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} 北京时间 | Claude Code 量化模型 | 模拟交易仅供参考
@@ -688,6 +690,47 @@ def build_dashboard(state_path: str = "outputs/paper_state.json", out_path: str 
         build_ver = bid_match.group(1)
         redirect_js = '<script>(function(){var v=location.search.match(/v=(\\d+)/);var b="' + build_ver + '";if(!v||v[1]!==b){location.replace(location.pathname+"?v="+b)}})();</script>'
         html = html.replace('</head>', redirect_js + '\n</head>')
+
+    # Post-process: wrap sections in collapsible details/summary (default collapsed)
+    # AI 决策面板
+    html = re.sub(
+        r'<h2>🧠 AI 决策面板 — 置信度排序 <span[^>]*>.*?</span></h2>',
+        '<details><summary style="color:#58a6ff;font-size:14px;cursor:pointer;padding-bottom:4px;border-bottom:2px solid #30363d;margin-bottom:8px">🧠 AI 决策面板 — 置信度排序 ▸</summary>',
+        html
+    )
+    # Close AI details before split23
+    sp = html.find('class="split23">')
+    if sp < 0: sp = html.find('split23')
+    if sp > 0:
+        before = html[:sp]; ld = before.rfind('</div>')
+        if ld > 0: html = html[:ld+6] + '\n</details>\n\n' + html[ld+6:]
+    # 最近交易
+    html = html.replace(
+        '<h3 style="color:#58a6ff;font-size:12px;margin-bottom:8px">📋 最近交易</h3>\n    <table>',
+        '<details><summary style="color:#58a6ff;font-size:12px;cursor:pointer;margin-bottom:8px">📋 最近交易 ▸</summary>\n    <table>'
+    )
+    pos = html.find('当前持仓')
+    if pos > 0:
+        seg = html[:pos]; lt = seg.rfind('</table>')
+        if lt > 0: html = html[:lt+8] + '\n    </details>' + html[lt+8:]
+    # 已平仓
+    html = html.replace(
+        '<h2>📋 已平仓持仓汇总</h2>\n<div class="card">',
+        '<details><summary style="color:#58a6ff;font-size:14px;cursor:pointer;padding-bottom:4px;border-bottom:2px solid #30363d;margin-bottom:8px">📋 已平仓持仓汇总 ▸</summary>\n<div class="card">'
+    )
+    ap = html.find('🏦 Alpaca Paper')
+    if ap > 0:
+        seg = html[:ap]; ld = seg.rfind('</div>')
+        if ld > 0: html = html[:ld+6] + '\n</details>\n\n' + html[ld+6:]
+    # 每日进度
+    html = html.replace(
+        '<h2>🎯 每日进度跟踪</h2>\n<div class="card">\n<table>',
+        '<details><summary style="color:#58a6ff;font-size:14px;cursor:pointer;padding-bottom:4px;border-bottom:2px solid #30363d;margin-bottom:8px">🎯 每日进度跟踪 ▸</summary>\n<div class="card">\n<table>'
+    )
+    html = html.replace(
+        '</table></div>\n\n<div class="footer">',
+        '</table></div>\n</details>\n\n<div class="footer">'
+    )
 
     Path(out_path).parent.mkdir(parents=True, exist_ok=True)
     Path(out_path).write_text(html)
