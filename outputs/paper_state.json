@@ -633,30 +633,14 @@
     },
     {
       "date": "2026-07-31",
-      "equity": 101950.99,
-      "cash": 76573.92,
-      "position_value": 25377.06,
-      "total_return": 4.0975,
-      "positions": 6
-    },
-    {
-      "date": "2026-07-31",
-      "equity": 102004.43,
-      "cash": 82502.12,
-      "position_value": 19502.31,
-      "total_return": 4.1002,
-      "positions": 6
-    },
-    {
-      "date": "2026-07-31",
-      "equity": 20031.25,
+      "equity": 20079.21,
       "cash": 528.92,
-      "position_value": 19502.33,
-      "total_return": 0.0016,
+      "position_value": 19550.28,
+      "total_return": 0.004,
       "positions": 6
     },
     {
-      "date": "2026-08-03",
+      "date": "2026-08-04",
       "equity": 20064.87,
       "cash": 528.92,
       "position_value": 19535.95,
@@ -665,9 +649,9 @@
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-08-03",
-  "total_trades": 48,
+  "last_update": "2026-08-04",
+  "total_trades": 37,
   "total_commission": 2.01,
   "account_cash": 82501.83,
-  "account_equity": 102035.32
+  "account_equity": 102047.8
 }
