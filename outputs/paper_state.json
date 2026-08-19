@@ -710,12 +710,20 @@
       "position_value": 20159.38,
       "total_return": 0.0352,
       "positions": 6
+    },
+    {
+      "date": "2026-08-19",
+      "equity": 20488.35,
+      "cash": 545.05,
+      "position_value": 19943.3,
+      "total_return": 0.0244,
+      "positions": 6
     }
   ],
   "start_date": "2026-06-12",
-  "last_update": "2026-08-18",
+  "last_update": "2026-08-19",
   "total_trades": 37,
   "total_commission": 2.01,
   "account_cash": 82501.83,
-  "account_equity": 102650.33
+  "account_equity": 102454.36
 }
